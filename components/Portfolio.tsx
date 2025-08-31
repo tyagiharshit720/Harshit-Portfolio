@@ -33,7 +33,7 @@ export default function Portfolio() {
     id: 3,
     title: "Admire Holidays - Website",
     description: "Travel & holiday booking website built with React & Node.js.",
-    image: "/admire-holidays-website.png", // replace with your actual screenshot path
+    image: "/admire.png", // replace with your actual screenshot path
     category: "web",
     link: "https://admireholidays.com",
   },
@@ -44,6 +44,14 @@ export default function Portfolio() {
     image: "/admire-holidays-admin.png", // replace with your actual screenshot path
     category: "fullstack",
     link: "https://admin.admireholidays.com",
+  },
+   {
+    id: 5,
+    title: "Snake game - just for fun",
+    description: "Created a small snake game website just for fun",
+    image: "/snake.png", // replace with your actual screenshot path
+    category: "web",
+    link: "https://snake-game-12.netlify.app/",
   },
   // ...other projects
 ]
