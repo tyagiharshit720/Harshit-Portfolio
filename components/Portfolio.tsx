@@ -10,59 +10,44 @@ export default function Portfolio() {
     { key: "*", label: "All" },
     { key: "fullstack", label: "Full Stack" },
     { key: "web", label: "Web" },
-    { key: "ai", label: "AI / ML" },
   ]
 
   const projects = [
-    {
-      id: 1,
-      title: "ERP System",
-      description: "MERN Stack ERP with HR, Admin & Employee modules.",
-      image: "/erp-dashboard.png",
-      category: "fullstack",
-      link: "#",
-    },
-    {
-      id: 2,
-      title: "CRM",
-      description: "React.js CRM with attendance tracking & role-based access.",
-      image: "/crm-dashboard-interface.png",
-      category: "fullstack",
-      link: "#",
-    },
-    {
-      id: 3,
-      title: "E-Commerce Website",
-      description: "Shop_Online project using React & MongoDB with payment integration.",
-      image: "/ecommerce-website-homepage.png",
-      category: "web",
-      link: "#",
-    },
-    {
-      id: 4,
-      title: "Object Detection AI",
-      description: "Python-based AI project for real-time object detection.",
-      image: "/ai-object-detection-interface.png",
-      category: "ai",
-      link: "#",
-    },
-    {
-      id: 5,
-      title: "Defence Website Prototype",
-      description: "Advanced web development project for Ministry of Defence.",
-      image: "/government-website-design.png",
-      category: "web",
-      link: "#",
-    },
-    {
-      id: 6,
-      title: "Mini Web Apps",
-      description: "Collection of small React & JS projects demonstrating various concepts.",
-      image: "/web-applications-collection.png",
-      category: "web",
-      link: "#",
-    },
-  ]
+  {
+    id: 1,
+    title: "ERP System",
+    description: "MERN Stack ERP with HR, Admin & Employee modules.",
+    image: "/erp-dashboard.png",
+    category: "fullstack",
+    link: "#",
+  },
+  {
+    id: 2,
+    title: "APIL India - Website",
+    description: "React.js CRM with attendance tracking & role-based access.",
+    image: "/apil.png",
+    category: "fullstack",
+    link: "https://www.apil-online.com",
+  },
+  {
+    id: 3,
+    title: "Admire Holidays - Website",
+    description: "Travel & holiday booking website built with React & Node.js.",
+    image: "/admire-holidays-website.png", // replace with your actual screenshot path
+    category: "web",
+    link: "https://admireholidays.com",
+  },
+  {
+    id: 4,
+    title: "Admire Holidays - Admin Panel",
+    description: "Admin dashboard for managing tours, bookings & users.",
+    image: "/admire-holidays-admin.png", // replace with your actual screenshot path
+    category: "fullstack",
+    link: "https://admin.admireholidays.com",
+  },
+  // ...other projects
+]
+
 
   const filteredProjects =
     activeFilter === "*" ? projects : projects.filter((project) => project.category === activeFilter)

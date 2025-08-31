@@ -1,38 +1,10 @@
+// components/Blog.tsx
 import Image from "next/image"
+import Link from "next/link"
+import { getAllPosts } from "../lib/blogData"
 
 export default function Blog() {
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Understanding React.js Components",
-      description:
-        "Learn how to create reusable components in React.js and make your web applications more maintainable.",
-      image: "/react-components-code.png",
-      date: "Aug 27, 2025",
-      author: "Harshit Tyagi",
-      link: "#",
-    },
-    {
-      id: 2,
-      title: "MERN Stack Projects: From Idea to Deployment",
-      description:
-        "Step-by-step guide to building MERN Stack projects and deploying them on the cloud with best practices.",
-      image: "/mern-stack-development.png",
-      date: "Aug 20, 2025",
-      author: "Harshit Tyagi",
-      link: "#",
-    },
-    {
-      id: 3,
-      title: "Tips for Writing Clean JavaScript Code",
-      description:
-        "Enhance your coding skills with best practices and techniques to write clean, readable, and efficient JavaScript.",
-      image: "/clean-javascript-code.png",
-      date: "Aug 15, 2025",
-      author: "Harshit Tyagi",
-      link: "#",
-    },
-  ]
+  const blogPosts = getAllPosts()
 
   return (
     <section id="blog" className="py-20 bg-gray-50 xl:ml-80">
@@ -63,7 +35,9 @@ export default function Blog() {
               </div>
               <div className="p-6">
                 <h4 className="text-xl font-semibold mb-3 hover:text-blue-600 transition-colors">
-                  <a href={post.link}>{post.title}</a>
+                  <Link href={`/blog/${post.slug}`}>
+                    {post.title}
+                  </Link>
                 </h4>
                 <p className="text-gray-600 mb-4 leading-relaxed">{post.description}</p>
                 <div className="flex items-center justify-between text-sm text-gray-500">

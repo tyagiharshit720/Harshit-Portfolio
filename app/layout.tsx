@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   keywords: "Full Stack Developer, React.js, Node.js, MERN Stack, JavaScript, Web Development",
   authors: [{ name: "Harshit Kumar Tyagi" }],
   creator: "Harshit Kumar Tyagi",
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -20,11 +20,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet" />
       </head>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>{children}</body>
+      <body suppressHydrationWarning={true}>
+        {children}
+      </body>
     </html>
   )
 }
