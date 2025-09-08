@@ -41,7 +41,7 @@ export default function Portfolio() {
     id: 4,
     title: "Admire Holidays - Admin Panel",
     description: "Admin dashboard for managing tours, bookings & users.",
-    image: "/admire-holidays-admin.png", // replace with your actual screenshot path
+    image: "/admin.png", // replace with your actual screenshot path
     category: "fullstack",
     link: "https://admin.admireholidays.com",
   },
