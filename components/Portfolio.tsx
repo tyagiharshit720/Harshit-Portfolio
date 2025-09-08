@@ -13,49 +13,55 @@ export default function Portfolio() {
   ]
 
   const projects = [
-  {
-    id: 1,
-    title: "ERP System",
-    description: "MERN Stack ERP with HR, Admin & Employee modules.",
-    image: "/erp-dashboard.png",
-    category: "fullstack",
-    link: "#",
-  },
-  {
-    id: 2,
-    title: "APIL India - Website",
-    description: "React.js CRM with attendance tracking & role-based access.",
-    image: "/apil.png",
-    category: "fullstack",
-    link: "https://www.apil-online.com",
-  },
-  {
-    id: 3,
-    title: "Admire Holidays - Website",
-    description: "Travel & holiday booking website built with React & Node.js.",
-    image: "/admire.png", // replace with your actual screenshot path
-    category: "web",
-    link: "https://admireholidays.com",
-  },
-  {
-    id: 4,
-    title: "Admire Holidays - Admin Panel",
-    description: "Admin dashboard for managing tours, bookings & users.",
-    image: "/admin.png", // replace with your actual screenshot path
-    category: "fullstack",
-    link: "https://admin.admireholidays.com",
-  },
-   {
-    id: 5,
-    title: "Snake game - just for fun",
-    description: "Created a small snake game website just for fun",
-    image: "/snake.png", // replace with your actual screenshot path
-    category: "web",
-    link: "https://snake-game-12.netlify.app/",
-  },
-  // ...other projects
-]
-
+    {
+      id: 1,
+      title: "ERP System",
+      description: "MERN Stack ERP with HR, Admin & Employee modules.",
+      image: "/erp-dashboard.png",
+      category: "fullstack",
+      link: "#",
+    },
+    {
+      id: 2,
+      title: "APIL India - Website",
+      description: "React.js CRM with attendance tracking & role-based access.",
+      image: "/apil.png",
+      category: "fullstack",
+      link: "https://www.apil-online.com",
+    },
+    {
+      id: 3,
+      title: "Admire Holidays - Website",
+      description: "Travel & holiday booking website built with React & Node.js.",
+      image: "/admire.png",
+      category: "web",
+      link: "https://admireholidays.com",
+    },
+    {
+      id: 4,
+      title: "Admire Holidays - Admin Panel",
+      description: "Admin dashboard for managing tours, bookings & users.",
+      image: "/admin.png",
+      category: "fullstack",
+      link: "https://admin.admireholidays.com",
+    },
+    {
+      id: 5,
+      title: "Snake game - just for fun",
+      description: "Created a small snake game website just for fun",
+      image: "/snake.png",
+      category: "web",
+      link: "https://snake-game-12.netlify.app/",
+    },
+    {
+      id: 6,
+      title: "Resume Analyzer",
+      description: "Working On Full Stack Project- Resume Analyzer",
+      image: "/resume analyzer.png",
+      category: "fullstack",
+      link: "https://resume-analyzer-b41t.onrender.com/",
+    },
+  ]
 
   const filteredProjects =
     activeFilter === "*" ? projects : projects.filter((project) => project.category === activeFilter)
@@ -67,8 +73,7 @@ export default function Portfolio() {
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Portfolio</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Here are some of my major projects, showcasing my skills in Full Stack Development, Web Development, and AI
-            applications.
+            Here are some of my major projects, showcasing my skills in Full Stack Development, Web Development, and AI applications.
           </p>
         </div>
 
@@ -92,7 +97,13 @@ export default function Portfolio() {
         {/* Portfolio Items */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <div key={project.id} className="bg-white rounded-lg shadow-lg overflow-hidden group">
+            <a
+              key={project.id}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300"
+            >
               <div className="relative overflow-hidden">
                 <Image
                   src={project.image || "/placeholder.svg"}
@@ -106,12 +117,6 @@ export default function Portfolio() {
                     <button className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-800 hover:bg-blue-600 hover:text-white transition-colors">
                       <i className="bi bi-zoom-in"></i>
                     </button>
-                    <a
-                      href={project.link}
-                      className="w-12 h-12 bg-white rounded-full flex items-center justify-center text-gray-800 hover:bg-blue-600 hover:text-white transition-colors"
-                    >
-                      <i className="bi bi-link-45deg"></i>
-                    </a>
                   </div>
                 </div>
               </div>
@@ -119,7 +124,7 @@ export default function Portfolio() {
                 <h4 className="text-xl font-semibold mb-2">{project.title}</h4>
                 <p className="text-gray-600">{project.description}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
