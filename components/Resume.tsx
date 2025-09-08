@@ -10,7 +10,7 @@ export default function Resume() {
             Passionate about building scalable web applications and contributing to innovative projects.
           </p>
           <a
-            href="/resume/Harshit Tyagi 6 Mern.pdf"
+            href="/resume/Harshit 6 Mern.pdf"
             target="_blank"
             className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
             rel="noreferrer"
