@@ -47,10 +47,12 @@ export default function Header() {
     { href: "https://www.linkedin.com/in/harshit-tyagi72/", icon: "bi-linkedin", label: "LinkedIn" },
     { href: "https://github.com/tyagiharshit720", icon: "bi-github", label: "GitHub" },
     { href: "https://www.geeksforgeeks.org/user/tyagiharshit72/", icon: "bi-book", label: "GeeksforGeeks" },
+    { href: "https://leetcode.com/tyagiharshit720/", icon: "bi-code", label: "LeetCode" },
   ]
 
   return (
     <>
+      {/* Desktop Sidebar */}
       <header className="fixed top-0 left-0 bottom-0 w-80 bg-gray-900 text-white flex flex-col z-50 xl:flex hidden">
         <button className="xl:hidden absolute top-4 right-4 text-2xl" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <i className="bi bi-list"></i>
@@ -71,19 +73,25 @@ export default function Header() {
             <h1 className="text-xl font-bold">Harshit Kumar Tyagi</h1>
           </Link>
 
-          <div className="flex gap-3 mt-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
-              >
-                <i className={`bi ${social.icon}`}></i>
-              </a>
-            ))}
-          </div>
+          <div className="flex gap-3 mt-4 relative">
+  {socialLinks.map((social) => (
+    <div key={social.label} className="relative group">
+      <a
+        href={social.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-colors"
+      >
+        <i className={`bi ${social.icon}`}></i>
+      </a>
+      {/* Tooltip */}
+      <span className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 bg-black text-white text-xs rounded py-1 px-2 whitespace-nowrap transition-opacity duration-300">
+        {social.label}
+      </span>
+    </div>
+  ))}
+</div>
+
         </div>
 
         <nav className="flex-1 px-6">
