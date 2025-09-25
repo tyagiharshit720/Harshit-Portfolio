@@ -8,107 +8,151 @@ export interface BlogPost {
   date: string;
   author: string;
   content: string;
+  category: string;
+  readTime: string;
+  tags: string[];
+  featured?: boolean;
 }
 
 export const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: "Understanding React.js Components",
+    title: "Understanding React.js Components: A Comprehensive Guide",
     slug: "understanding-react-components",
-    description: "Learn how to create reusable components in React.js and make your web applications more maintainable.",
+    description: "Learn how to create reusable components in React.js and make your web applications more maintainable with modern patterns and best practices.",
     image: "/react-components-code.png",
     date: "Aug 27, 2025",
     author: "Harshit Tyagi",
+    category: "React",
+    readTime: "8 min read",
+    tags: ["React", "Components", "JavaScript"],
+    featured: true,
     content: `
-      <h2>Introduction to React Components</h2>
-      <p>React components are the building blocks of any React application. They let you split the UI into independent, reusable pieces, and think about each piece in isolation.</p>
-      
-      <h2>Functional Components</h2>
-      <p>Functional components are simply JavaScript functions that return JSX. With the introduction of Hooks, functional components can now manage state and side effects.</p>
-      
-      <pre><code>function Welcome(props) {
+      <section class="space-y-6">
+        <h2 class="text-2xl font-bold text-gray-800">Introduction to React Components</h2>
+        <p class="text-gray-700 leading-relaxed">React components are the building blocks of any React application. They let you split the UI into independent, reusable pieces, and think about each piece in isolation.</p>
+        
+        <h2 class="text-2xl font-bold text-gray-800">Functional Components</h2>
+        <p class="text-gray-700 leading-relaxed">Functional components are simply JavaScript functions that return JSX. With Hooks, functional components can now manage state, lifecycle methods, and side effects.</p>
+        
+        <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto"><code class="language-js">function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }</code></pre>
-      
-      <h2>Class Components</h2>
-      <p>Class components are ES6 classes that extend from React.Component. They have additional features like state and lifecycle methods.</p>
-      
-      <pre><code>class Welcome extends React.Component {
+
+        <h2 class="text-2xl font-bold text-gray-800">Class Components</h2>
+        <p class="text-gray-700 leading-relaxed">Class components are ES6 classes that extend React.Component. They provide state and lifecycle methods for more complex behavior.</p>
+        
+        <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto"><code class="language-js">class Welcome extends React.Component {
   render() {
     return <h1>Hello, {this.props.name}</h1>;
   }
 }</code></pre>
-      
-      <h2>When to Use Which</h2>
-      <p>With the introduction of Hooks, functional components can do almost everything class components can do. The React team recommends using functional components for new projects.</p>
+
+        <h2 class="text-2xl font-bold text-gray-800">Best Practices & Tips</h2>
+        <ul class="list-disc pl-6 text-gray-700 leading-relaxed space-y-2">
+          <li>Use functional components for new projects.</li>
+          <li>Keep components small and focused on a single responsibility.</li>
+          <li>Organize files with a clear folder structure (components, pages, utils).</li>
+          <li>Use PropTypes or TypeScript for type safety.</li>
+          <li>Leverage hooks like useState, useEffect, useContext for state and side effects.</li>
+        </ul>
+      </section>
     `
   },
   {
     id: 2,
     title: "MERN Stack Projects: From Idea to Deployment",
     slug: "mern-stack-projects-guide",
-    description: "Step-by-step guide to building MERN Stack projects and deploying them on the cloud with best practices.",
+    description: "Step-by-step guide to building MERN Stack projects and deploying them on the cloud with best practices and production-ready configurations.",
     image: "/mern-stack-development.png",
     date: "Aug 20, 2025",
     author: "Harshit Tyagi",
+    category: "Full Stack",
+    readTime: "12 min read",
+    tags: ["MERN", "MongoDB", "Express", "React", "Node.js"],
+    featured: true,
     content: `
-      <h2>What is the MERN Stack?</h2>
-      <p>The MERN stack is a popular JavaScript stack for building modern web applications. It consists of MongoDB, Express.js, React, and Node.js.</p>
-      
-      <h2>Setting Up Your Project</h2>
-      <p>Start by creating a new directory for your project and initialize it with npm. Set up your backend with Express and Node, and your frontend with Create React App.</p>
-      
-      <h2>Building the API</h2>
-      <p>Create RESTful APIs with Express that connect to your MongoDB database using Mongoose. Implement CRUD operations for your data models.</p>
-      
-      <h2>Creating the React Frontend</h2>
-      <p>Develop your user interface with React, using components, state management, and routing. Connect to your backend APIs using Axios or Fetch.</p>
-      
-      <h2>Deployment</h2>
-      <p>Deploy your backend to platforms like Heroku or DigitalOcean, and your frontend to Netlify or Vercel. Don't forget to set up environment variables for production.</p>
+      <section class="space-y-6">
+        <h2 class="text-2xl font-bold text-gray-800">What is the MERN Stack?</h2>
+        <p class="text-gray-700 leading-relaxed">MERN stands for MongoDB, Express.js, React, and Node.js. It is a full-stack JavaScript solution for building modern web applications.</p>
+
+        <h2 class="text-2xl font-bold text-gray-800">Step 1: Setting Up the Project</h2>
+        <p class="text-gray-700 leading-relaxed">Create a new project directory, initialize npm, and install dependencies. Structure your folders for backend and frontend separately for clarity.</p>
+
+        <h2 class="text-2xl font-bold text-gray-800">Step 2: Building the Backend API</h2>
+        <p class="text-gray-700 leading-relaxed">Use Express.js to create RESTful APIs and Mongoose to interact with MongoDB. Implement CRUD operations for data management.</p>
+        <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto"><code class="language-js">const express = require('express');
+const mongoose = require('mongoose');
+const app = express();
+
+app.use(express.json());
+
+mongoose.connect('mongodb://localhost:27017/mydb');
+
+app.listen(5000, () => console.log('Server running on port 5000'));</code></pre>
+
+        <h2 class="text-2xl font-bold text-gray-800">Step 3: Frontend with React</h2>
+        <p class="text-gray-700 leading-relaxed">Create React components, manage state with useState or Redux, and make API calls to your backend with Axios or Fetch.</p>
+
+        <h2 class="text-2xl font-bold text-gray-800">Step 4: Deployment</h2>
+        <p class="text-gray-700 leading-relaxed">Deploy backend on platforms like Heroku or DigitalOcean. Deploy frontend on Netlify or Vercel. Configure environment variables and ensure CORS settings are correct.</p>
+      </section>
     `
   },
   {
     id: 3,
     title: "Tips for Writing Clean JavaScript Code",
     slug: "clean-javascript-tips",
-    description: "Enhance your coding skills with best practices and techniques to write clean, readable, and efficient JavaScript.",
+    description: "Enhance your coding skills with best practices and techniques to write clean, readable, and efficient JavaScript code that scales.",
     image: "/clean-javascript-code.png",
     date: "Aug 15, 2025",
     author: "Harshit Tyagi",
+    category: "JavaScript",
+    readTime: "6 min read",
+    tags: ["JavaScript", "Best Practices", "Clean Code"],
     content: `
-      <h2>Why Clean Code Matters</h2>
-      <p>Clean code is easy to understand, maintain, and extend. It reduces bugs and makes collaboration with other developers much smoother.</p>
-      
-      <h2>Use Descriptive Names</h2>
-      <p>Variables, functions, and classes should have names that clearly describe their purpose. Avoid abbreviations and single-letter names (except for loop counters).</p>
-      
-      <pre><code>// Bad
-function p(u) {
-  return u * 1.1;
-}
+      <section class="space-y-6">
+        <h2 class="text-2xl font-bold text-gray-800">Why Clean Code Matters</h2>
+        <p class="text-gray-700 leading-relaxed">Clean code is easier to read, maintain, and scale. It reduces bugs and improves collaboration in a team environment.</p>
+
+        <h2 class="text-2xl font-bold text-gray-800">Descriptive Names</h2>
+        <p class="text-gray-700 leading-relaxed">Choose meaningful variable and function names. Avoid unclear abbreviations.</p>
+        <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto"><code class="language-js">// Bad
+function p(u) { return u * 1.1; }
 
 // Good
-function calculatePriceWithTax(price) {
-  return price * 1.1;
-}</code></pre>
-      
-      <h2>Keep Functions Small and Focused</h2>
-      <p>Each function should do one thing and do it well. If a function is getting long, consider breaking it into smaller helper functions.</p>
-      
-      <h2>Consistent Formatting</h2>
-      <p>Use a consistent code style throughout your project. Consider using a linter like ESLint and a formatter like Prettier to enforce consistency.</p>
-      
-      <h2>Comment When Necessary</h2>
-      <p>Good code mostly documents itself, but add comments when you need to explain why something is done a certain way, not what the code is doing.</p>
+function calculatePriceWithTax(price) { return price * 1.1; }</code></pre>
+
+        <h2 class="text-2xl font-bold text-gray-800">Keep Functions Small</h2>
+        <p class="text-gray-700 leading-relaxed">Functions should perform one task only. Break large functions into smaller helpers for readability.</p>
+
+        <h2 class="text-2xl font-bold text-gray-800">Consistent Formatting</h2>
+        <p class="text-gray-700 leading-relaxed">Use a linter like ESLint and a formatter like Prettier to maintain consistency across your project.</p>
+
+        <h2 class="text-2xl font-bold text-gray-800">Comments and Documentation</h2>
+        <p class="text-gray-700 leading-relaxed">Comment code only when necessary, focusing on why rather than what. Write documentation for complex modules or APIs.</p>
+      </section>
     `
   },
 ];
 
+// Utility functions remain the same
 export function getPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find(post => post.slug === slug);
 }
 
 export function getAllPosts(): BlogPost[] {
-  return blogPosts;
+  return blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+export function getFeaturedPosts(): BlogPost[] {
+  return blogPosts.filter(post => post.featured);
+}
+
+export function getPostsByCategory(category: string): BlogPost[] {
+  return blogPosts.filter(post => post.category === category);
+}
+
+export function getPostsByTag(tag: string): BlogPost[] {
+  return blogPosts.filter(post => post.tags.includes(tag));
 }
